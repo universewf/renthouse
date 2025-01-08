@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<ul class="list-articles">
+    {% for p in posts%}
+    <li><div class="article-panel">
+    <p class='first'>Цена: {{p.payment}} | Категория: {{p.cat.title}} </p>
+    <p class='last'>Дата: {{p.time_create|date:"d-m-Y H:i:s"}}</p>
+    </div>
+    {%if p.photo%}
+        <p><img class="img-article-left thumb" src="{{p.photo.url}}"></p>
+    {% endif %}
+        <p>{{p.title}}</p>
+        {% autoescape off %}
+        <p>{{p.description|linebreaks|truncatewords:20}}</p>
+        {% endautoescape %}
+        <p><a href="{{ p.get_absolute_url }}">Читать обьявление</a></p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

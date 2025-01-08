@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+
+
+{% if post.photo %}
+<p><img class="img-article-left" src="{{post.photo.url}}"></p>
+{% endif %}
+<h2>О квартире</h2>
+<div class ="home-info">
+    <li>Количество комнат: {{post.number_of_rooms}}</li>
+    <li>Общая площадь: {{post.size_of_apartment}}</li>
+    <li>Этаж: {{post.floor}}</li>
+    <li>Стоимость: {{post.payment}}</li>
+</div>
+
+{{post.description|linebreaks}}
+{% endblock %}
