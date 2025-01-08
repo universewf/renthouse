@@ -16,6 +16,7 @@
         <p>{{p.description|linebreaks|truncatewords:20}}</p>
         {% endautoescape %}
         <p><a href="{{ p.get_absolute_url }}">Читать обьявление</a></p>
+        <p><a href="{% url 'edit' p.slug %}">Изменить обьявление</a></p>
         <hr>
     </li>
     {% endfor %}
