@@ -6,7 +6,7 @@ from rent_house.models import Appartments, Category
 class AppartmentsAdmin(admin.ModelAdmin):
     fields = ['title','slug','description','photo','payment','number_of_rooms','size_of_apartment','floor','furniture','technique','cat','is_published']
     prepopulated_fields = {'slug':('title',)}
-    list_display = ['title','time_create','photo','is_published','cat']
+    list_display = ['title','time_create','photo','payment','is_published','cat']
     list_display_links = ['title']
     ordering = ['time_create']
     list_per_page =5

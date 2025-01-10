@@ -11,6 +11,7 @@ class Index(ListView):
     model= Appartments
     template_name = 'rent_house/index.html'
     context_object_name = 'posts'
+    paginate_by =3
     extra_context = {
         'title':'Главная страница',
     }
